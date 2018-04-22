@@ -5,7 +5,7 @@
 #89DA59 - spring green  */
 
 body {
-    background-image: url("https://github.com/stlefebvre/GIPHY/blob/master/assets/background%20images/round/round.png?raw=true");
+    background-image: url("https://github.com/stlefebvre/GIPHY/blob/master/assets/background%20images/stripes.png?raw=true");
     background-color: white;
     font-family: 'Quicksand', sans-serif;
 }
@@ -22,9 +22,17 @@ body {
     text-align: center;
 }
 
-p {
-    color: #89DA59;
-    text-align: center;
+#body-panel1 {
+    border-style: double;
+    border-color: #F98866;
+}
+#good-boi-heading {
+    background-color: #F98866;
+    color: white;
+}
+
+.dogbreed {
+    border-color: #89DA59;
 }
 
 .dogbreed:hover {
