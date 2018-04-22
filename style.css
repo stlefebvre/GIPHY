@@ -1,13 +1,33 @@
+/* petal color themes:
+#F98866 - petal
+#F4420E - poppy
+#80BD9E - stem 
+#89DA59 - spring green  */
+
 body {
     background-image: url("https://github.com/stlefebvre/GIPHY/blob/master/assets/background%20images/round/round.png?raw=true");
     background-color: white;
     font-family: 'Quicksand', sans-serif;
 }
 
+#jumbotron {
+    border-style: double;
+    border-color: #F98866;
+    background-color: white;
+}
+
 #jumbotron-header {
     font-family: 'The Girl Next Door', cursive;
+    color: #FF420E;
+    text-align: center;
+}
+
+p {
+    color: #89DA59;
+    text-align: center;
 }
 
 .dogbreed:hover {
-    background-color: #ecb3ff;
+    background-color: #80BD9E;
+    color: white;
 }
