@@ -5,22 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dog Breeds!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap 3.3.7-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
-   <div id="buttons-go-here"></div> 
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Doggos!!!</h1>
+            <p>Click the button or add your own breed to look for!</p>
+        </div>
 
-   <div id="gifs-go-here"></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">All the good bois!</h3>
+            </div>
+            <div class="panel-body" id="buttons-go-here"></div>
+        </div> 
 
-    <form id="dogbreeds-form">
-        <label for="search">Bork!</label>
-        <input type="text" id="breed-input-field">
-        <br>
-        <input id="search" type="submit" value="Bork!">
-    </form>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Boop the Snoots!</h3>
+            </div>
+            <div class="panel-body" id="gifs-go-here"></div>
+        </div>
 
-<script src="app.js"></script>
+        <label for="dog-breed-test">Doggo Breeds!</label>
+        <div class="input-group" id=dog-breed-test>
+            <input type="text" class="form-control" id="breed-input-field">
+            <br>
+            <button class="btn btn-default" type="submit" id="search" value="Doggo Breeds!">Bork!</button>
+        </div>
+
+    </div>
+
+    <!--My Javascript-->
+    <script src="app.js"></script>
 </body>
 </html>

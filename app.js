@@ -7,7 +7,8 @@ $(document).ready(function () {
         //empties div so there are no duplicate buttons
         $("#buttons-go-here").empty();
         for (var i = 0; i < topics.length; i++) {
-            var a = $("<button>");
+            var a = $("<button type='button'>");
+            a.addClass("btn btn-default")
             a.addClass("dogbreed");
             a.attr("data-name", topics[i]);
             a.text(topics[i]);
@@ -25,12 +26,16 @@ $(document).ready(function () {
         topicsButtons();
     });
 
-    // var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ArrnUSeTmBQ1nq8tmaRirhx1HWuu8GrK&q=" + dogbreeds + "&limit=10&offset=0&rating=G&lang=en";
+    $(".dogbreed").on("click", function(event) {
 
-    // $.ajax({
-    //     url: queryURL,
-    //     method: "GET"
-    // }).done(function (response) {
-    //     console.log(response)
-    // });
+        var dogbreeds = $(this).attr("data-name")
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ArrnUSeTmBQ1nq8tmaRirhx1HWuu8GrK&q=" + dogbreeds + "&limit=10&offset=0&rating=G&lang=en";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).done(function (response) {
+            console.log(response)
+        });
+    })
 })
