@@ -15,24 +15,22 @@ $(document).ready(function () {
         }
     }
 
+    topicsButtons()
+
     $("#search").on("click", function(event) {
         console.log("clicked");
         event.preventDefault();
-
         var dogbreeds = $("#breed-input-field").val().trim();
-
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ArrnUSeTmBQ1nq8tmaRirhx1HWuu8GrK&q=" + dogbreeds + "&limit=10&offset=0&rating=G&lang=en";
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).done(function (response) {
-            console.log(response)
-        });
-
         topics.push(dogbreeds);
-
         topicsButtons();
-
     });
+
+    // var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ArrnUSeTmBQ1nq8tmaRirhx1HWuu8GrK&q=" + dogbreeds + "&limit=10&offset=0&rating=G&lang=en";
+
+    // $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    // }).done(function (response) {
+    //     console.log(response)
+    // });
 })
