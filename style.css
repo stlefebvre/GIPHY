@@ -1,0 +1,17 @@
+body {
+    background-image: url("https://github.com/stlefebvre/GIPHY/blob/master/assets/background%20images/round/round.png?raw=true");
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#jumbotron {
+    background-color: #cc33ff;
+}
+
+#jumbotron-header {
+    font-family: 'The Girl Next Door', cursive;
+}
+
+.dogbreed:hover {
+    background-color: #ecb3ff;
+}
