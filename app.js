@@ -26,7 +26,8 @@ $(document).ready(function () {
         topicsButtons();
     });
 
-    $(".dogbreed").on("click", function(event) {
+    //This method makes it so JS-rendered search results are clickable through to the AJAX call
+    $("body").on("click", ".dogbreed", function(event) {
         console.log("dog button clicked");
 
         var dogbreeds = $(this).attr("data-name");
