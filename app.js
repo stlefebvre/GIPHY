@@ -44,11 +44,30 @@ $(document).ready(function () {
                 var rating = results [i].rating;
                 var p = $("<p>").text("Rating: " + rating);
                 var dogImage = $("<img>");
-                dogImage.attr("src", results[i].images.fixed_height.url);
+                dogImage.attr({
+                    src: results[i].images.fixed_height_still.url,
+                    data_animatesrc: results[i].images.fixed_height.url,
+                    data_stillsrc: results[i].images.fixed_height_still.url,
+                    data_state: "still"
+                });
+                //adds gif class to be used in the next click handler event
+                dogImage.addClass("gif");
                 dogGifDiv.prepend(p);
                 dogGifDiv.prepend(dogImage);
                 $("#gifs-go-here").prepend(dogGifDiv);
             }
         });
     });
+
+    $("body").on("click", ".gif", function () {
+        var state = $(this).attr("data_state")
+        console.log("clicked gif. data state: " + state);
+        if (state === "still") {
+            $(this).attr('src', $(this).attr("data_animatesrc"));
+            $(this).attr("data_state", "animate");
+        } else if (state === "animate") {
+            $(this).attr('src', $(this).attr("data_stillsrc"));
+            $(this).attr('data_state', 'still');
+        }      
+    })
 });
