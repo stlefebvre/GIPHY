@@ -8,8 +8,8 @@ $(document).ready(function () {
         $("#buttons-go-here").empty();
         for (var i = 0; i < topics.length; i++) {
             var a = $("<button type='button'>");
-            a.addClass("btn btn-default")
-            a.addClass("dogbreed");
+            a.addClass("btn btn-default");
+            a.addClass("dogbreed")
             a.attr("data-name", topics[i]);
             a.text(topics[i]);
             $("#buttons-go-here").append(a)
@@ -27,15 +27,27 @@ $(document).ready(function () {
     });
 
     $(".dogbreed").on("click", function(event) {
+        console.log("dog button clicked");
 
-        var dogbreeds = $(this).attr("data-name")
+        var dogbreeds = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ArrnUSeTmBQ1nq8tmaRirhx1HWuu8GrK&q=" + dogbreeds + "&limit=10&offset=0&rating=G&lang=en";
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).done(function (response) {
-            console.log(response)
+            console.log(response);
+            var results = response.data;
+            for (var i = 0; i <results.length; i++) {
+                var dogGifDiv = $("<div class='dogGifDiv'>");
+                var rating = results [i].rating;
+                var p = $("<p>").text("Rating: " + rating);
+                var dogImage = $("<img>");
+                dogImage.attr("src", results[i].images.fixed_height.url);
+                dogGifDiv.prepend(p);
+                dogGifDiv.prepend(dogImage);
+                $("#gifs-go-here").prepend(dogGifDiv);
+            }
         });
-    })
-})
+    });
+});
