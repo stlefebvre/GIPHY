@@ -7,6 +7,7 @@
 body {
     background-image: url("https://github.com/stlefebvre/GIPHY/blob/master/assets/background%20images/stripes.png?raw=true");
     background-color: white;
+    background-attachment: fixed;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -22,16 +23,20 @@ body {
     text-align: center;
 }
 
-#body-panel1 {
-    border-style: double;
+#good-bois, #boop, #add-doggo {
+    border-top: double;
+    border-left: double;
+    border-right: double;
+    border-bottom: double;
     border-color: #F98866;
 }
-#good-boi-heading {
+
+#good-boi-heading, #boop-heading, #add-doggo-heading{
     background-color: #F98866;
     color: white;
 }
 
-.dogbreed {
+.dogbreed, #search {
     border-color: #89DA59;
 }
 
